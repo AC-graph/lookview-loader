@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/AC-graph/lookview-loader/issues"
   },
-  "homepage": "https://github.com/AC-graph/lookview-loader#readme"
+  "homepage": "https://github.com/AC-graph/lookview-loader#readme",
+  "dependencies": {
+    "xhtml-engine": "^2.0.1"
+  }
 }
