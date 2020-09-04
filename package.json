@@ -1,0 +1,24 @@
+{
+  "name": "lookview-loader",
+  "version": "0.0.0-alpha",
+  "description": "在webpack环境中为lookview提供解析特殊文件的能力",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AC-graph/lookview-loader.git"
+  },
+  "keywords": [
+    "lookview",
+    "webpack",
+    "loader"
+  ],
+  "author": "心叶",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AC-graph/lookview-loader/issues"
+  },
+  "homepage": "https://github.com/AC-graph/lookview-loader#readme"
+}
