@@ -1,0 +1,18 @@
+{
+  "name": "lookview-loader-test",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "webpack-dev-server --config webpack.config.js",
+    "echo": "echo 'chrome://inspect/#devices'",
+    "debug": "node --inspect-brk node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "lookview": "^2.0.1-beta"
+  }
+}
