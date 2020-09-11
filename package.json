@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/AC-graph/lookview-loader/issues"
   },
-  "homepage": "https://github.com/AC-graph/lookview-loader#readme",
+  "homepage": "http://yelloxing.gitee.io/lookview-api",
   "dependencies": {
     "xhtml-engine": "^2.0.1"
   }

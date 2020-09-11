@@ -1,4 +1,4 @@
-import { LookView } from 'lookview';
+import { LookView, $$ } from 'lookview';
 import image from './image.lookview';
 
 new LookView({
@@ -13,7 +13,13 @@ new LookView({
     return {
       info: "整体测试",
       x: 100,
-      flag: true
+      flag: true,
+      deg: '0deg',
+      fDeg: "0deg",
+      text: `第一行
+第二行：xxxx
+...
+更多`
     };
   },
 
@@ -24,11 +30,19 @@ new LookView({
     }
   },
 
+  mounted: function () {
+    let that = this;
+    $$.animation(function (deep) {
+      that.deg = (deep * 135000) + "deg";
+      that.fDeg = -(deep * 300000) + "deg";
+    }, 3000000);
+  },
+
   // 生命周期
   beforeCreate: function () { console.log('beforeCreate'); },
   created: function () { console.log('created'); },
   beforeMount: function () { console.log('beforeMount'); },
-  mounted: function () { console.log('mounted'); },
+  // mounted: function () { console.log('mounted'); },
   beforeUnmount: function () { console.log('beforeUnmount'); },
   unmounted: function () { console.log('unmounted'); },
   beforeDestroy: function () { console.log('beforeDestroy'); },
