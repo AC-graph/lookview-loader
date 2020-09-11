@@ -1,3 +1,9 @@
+<!--
+
+  基本测试：指令和类型等
+
+-->
+
 <arc fill-color='red' color='blue' line-width='30' cx::number='50w' cy::number=250 radius2::bumber='145'
   radius1::number='200' l-bind:begin::number='fDeg' value::number='270deg'></arc>
 <group l-if='flag'>
@@ -5,6 +11,12 @@
   <arc l-bind:cx::number='x' cy::number=250 radius1::number='200' begin::number='180deg' value::number='1pi'>
   </arc>
 </group>
+
+<!--
+
+  图形测试
+
+-->
 
 <!-- circle圆 -->
 <circle fill-color='blue' line-width='20' cx::number='50w' cy='250' radius='75' type='full'>
