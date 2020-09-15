@@ -34,7 +34,7 @@ module.exports = function loader(source) {
 
                     attrs[key_type[0]] = {
                         value: curNodeValue.attrs[key],
-                        type: key_type[1] || "default"
+                        ruler: key_type[1] || "default"
                     };
                 }
 

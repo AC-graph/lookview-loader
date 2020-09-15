@@ -1,36 +1,5 @@
-<!--
 
-  基本测试：指令和类型等
+<!-- 测试基本的设计主体 -->
 
--->
-
-<arc fill-color='red' color='blue' line-width='30' cx::number='50w' cy::number=250 radius2::bumber='145'
-  radius1::number='200' l-bind:begin::number='fDeg' value::number='270deg'></arc>
-<group l-if='flag'>
-  <arc cx::number=250 cy::number=250 radius1::number='200' begin::number='90deg' value::number='1pi'></arc>
-  <arc l-bind:cx::number='x' cy::number=250 radius1::number='200' begin::number='180deg' value::number='1pi'>
-  </arc>
-</group>
-
-<!--
-
-  图形测试
-
--->
-
-<!-- circle圆 -->
-<circle fill-color='blue' line-width='20' cx::number='50w' cy='250' radius='75' type='full'>
-</circle>
-
-<!-- rect矩形 -->
-<rect stroke-color='pink' line-width='10' y::number='300' x::number='calc(50w - 200)' width::number='400' height='300'>
-</rect>
-
-<!-- 文字 -->
-<text x::number='calc(50w - 180)' y::number='320' color='white' type='fill' value='绘制的文字\n第二行'></text>
-<text line-height::number='3.6em' x::number='calc(50w - 180)' y::number='370' color='red' type='fill'
-  l-bind:value='text'></text>
-
-<!-- arc弧形 -->
-<arc type='stroke' color='green' line-width='30' cx::number='50w' cy::number=250 radius2::bumber='100'
-  radius1::number='145' l-bind:begin::number='deg' value::number='0.7pi'></arc>
+<arc type='stroke' fill-color='red' line-width='30' cx::rulerName='50w' cy::rulerName=250
+radius2::rulerName='100' radius1::rulerName='200' begin::rulerName='0' deg::rulerName='270deg'></arc>
