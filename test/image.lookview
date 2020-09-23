@@ -1,8 +1,7 @@
-
 <!-- 测试基本的设计主体 -->
 
-<arc type='stroke' fill-color='red' line-width='30' cx='50w' cy=250
-radius2='100' radius1='200' begin='0' deg='270deg'></arc>
+<arc type='stroke' fill-color='red' line-width='30' cx='50w' cy=250 radius2='100' radius1='200' begin='0' deg='270deg'>
+</arc>
 
 <path type='stroke' fill-color='red' stroke-color='pink' line-width='10'>
     <move-to x="10w" y="10"></move-to>
@@ -10,3 +9,6 @@ radius2='100' radius1='200' begin='0' deg='270deg'></arc>
     <bezier-to type='2' cp1x="30w" cp1y="30h" x="50w" y="20h"></bezier-to>
     <bezier-to type='3' cp1x="30w" cp1y="30h" cp2x="30w" cp2y="40h" x="40w" y="40h"></bezier-to>
 </path>
+
+<text type="stroke" x='80w' y='20h' stroke-color='red'>csii科蓝</text>
+<text type="full" x='90w' y='20h' stroke-color='red' fill-color='black' content='优先读我'>123自行车</text>

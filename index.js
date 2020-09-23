@@ -37,13 +37,13 @@ module.exports = function loader(source) {
                         ruler: key_type[1] || "default"
                     };
                 }
- 
+
                 if (curNodeValue.tagName.toUpperCase() == 'PATH') {
                     let lines = [];
                     // PATH标签下的子标签循环
                     for (let j = 0; j < curNode.children().length; j++) {
                         let lineattr = {};
-                        
+
                         // 子标签的属性获取
                         for (let key in curNode.children().eq(j).valueOf().attrs) {
                             let key_type = key.split('::');
@@ -60,14 +60,27 @@ module.exports = function loader(source) {
                         });
                     }
                     // 子节点的属性重新放回到Path节点中去
-                    attrs.$lines=lines;
+                    attrs.$lines = lines;
                     resultData.push({
                         series: (curNodeValue.tagName + "").toLowerCase(),
                         attr: attrs,
                     });
-                    // console.log(resultData.valueOf()[1].attr.$lines.valueOf()[0]);
                     continue;
                 }
+
+                // 识别text标签下的所有文字
+                else if (curNodeValue.tagName.toUpperCase() == 'TEXT') {
+
+                    // 确定text标签中是否存在content属性
+                    if (!('content' in curNodeValue.attrs)) {
+                        // 如果不存在content属性，将标签下的所有内容放入新建的content属性中
+                        attrs.content = {
+                            value: curNode.innerHTML(),
+                            ruler: "default"
+                        };
+                    }
+                }
+
                 resultData.push({
                     series: (curNodeValue.tagName + "").toLowerCase(),
                     attr: attrs,
@@ -76,12 +89,14 @@ module.exports = function loader(source) {
 
             }
 
+
+
         }
 
         return resultData;
 
     })(Engine);
-    
+
     return `
         export default ${JSON.stringify(target, undefined, 4)};
     `;
