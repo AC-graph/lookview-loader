@@ -81,8 +81,7 @@ module.exports = function loader(source) {
         return resultData;
 
     })(Engine);
-    console.log(`${JSON.stringify(target, undefined, 4)}`);
-
+    
     return `
         export default ${JSON.stringify(target, undefined, 4)};
     `;
