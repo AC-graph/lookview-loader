@@ -37,7 +37,37 @@ module.exports = function loader(source) {
                         ruler: key_type[1] || "default"
                     };
                 }
+ 
+                if (curNodeValue.tagName.toUpperCase() == 'PATH') {
+                    let lines = [];
+                    // PATH标签下的子标签循环
+                    for (let j = 0; j < curNode.children().length; j++) {
+                        let lineattr = {};
+                        
+                        // 子标签的属性获取
+                        for (let key in curNode.children().eq(j).valueOf().attrs) {
+                            let key_type = key.split('::');
 
+                            lineattr[key_type[0]] = {
+                                value: curNode.children().eq(j).valueOf().attrs[key],
+                                ruler: key_type[1] || "default"
+                            };
+                        }
+                        // 将属性放入数组中去
+                        lines.push({
+                            series: (curNode.children().eq(j).valueOf().tagName + "").toLowerCase(),
+                            attr: lineattr
+                        });
+                    }
+                    // 子节点的属性重新放回到Path节点中去
+                    attrs.$lines=lines;
+                    resultData.push({
+                        series: (curNodeValue.tagName + "").toLowerCase(),
+                        attr: attrs,
+                    });
+                    // console.log(resultData.valueOf()[1].attr.$lines.valueOf()[0]);
+                    continue;
+                }
                 resultData.push({
                     series: (curNodeValue.tagName + "").toLowerCase(),
                     attr: attrs,
@@ -51,6 +81,7 @@ module.exports = function loader(source) {
         return resultData;
 
     })(Engine);
+    console.log(`${JSON.stringify(target, undefined, 4)}`);
 
     return `
         export default ${JSON.stringify(target, undefined, 4)};
