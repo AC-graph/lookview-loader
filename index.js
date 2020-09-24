@@ -71,14 +71,24 @@ module.exports = function loader(source) {
                 // 识别text标签下的所有文字
                 else if (curNodeValue.tagName.toUpperCase() == 'TEXT') {
 
+                    let flag = false;
+
+                    // 将attrs下的所有key的属性读取出来
+                    for (let j = 0; j < Object.keys(curNodeValue.attrs).length; j++) {
+                        if ('content' == Object.keys(curNodeValue.attrs)[j].replace(/^l\-bind\:/, '').split('::')[0]) {
+                            flag = true;
+                        }
+                    }
+
                     // 确定text标签中是否存在content属性
-                    if (!('content' in curNodeValue.attrs)) {
+                    if (!flag) {
                         // 如果不存在content属性，将标签下的所有内容放入新建的content属性中
                         attrs.content = {
                             value: curNode.innerHTML(),
                             ruler: "default"
                         };
                     }
+
                 }
 
                 resultData.push({

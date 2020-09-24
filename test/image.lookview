@@ -12,3 +12,4 @@
 
 <text type="stroke" x='80w' y='20h' stroke-color='red'>csii科蓝</text>
 <text type="full" x='90w' y='20h' stroke-color='red' fill-color='black' content='优先读我'>123自行车</text>
+<text type="full" x='90w' y='30h' stroke-color='red' fill-color='black' l-bind:content='指令测试'>123自行车</text>
