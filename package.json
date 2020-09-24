@@ -1,6 +1,6 @@
 {
   "name": "lookview-loader",
-  "version": "0.1.2-beta",
+  "version": "1.0.0",
   "description": "在webpack环境中为lookview提供解析特殊文件的能力",
   "main": "index.js",
   "repository": {

@@ -11,7 +11,8 @@ new LookView({
   data: function () {
     return {
       x: 100,
-      flag: false
+      flag: false,
+      text: "来自l-bind的内容"
     };
   },
 
@@ -19,6 +20,18 @@ new LookView({
   methods: {
     doit() {
       console.log('>>> doit');
+    }
+  },
+
+  // 坐标系
+  coordinate: {
+
+    demo: function () {
+      return {
+        link: function (value) {
+          return '[坐标系]' + value;
+        }
+      };
     }
   },
 

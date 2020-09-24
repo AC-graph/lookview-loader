@@ -10,6 +10,8 @@
     <bezier-to type='3' cp1x="30w" cp1y="30h" cp2x="30w" cp2y="40h" x="40w" y="40h"></bezier-to>
 </path>
 
-<text type="stroke" x='80w' y='20h' stroke-color='red'>csii科蓝</text>
+<text type="stroke" x='80w' y='20h' stroke-color='red'>我爱你中国</text>
 <text type="full" x='90w' y='20h' stroke-color='red' fill-color='black' content='优先读我'>123自行车</text>
-<text type="full" x='90w' y='30h' stroke-color='red' fill-color='black' l-bind:content='指令测试'>123自行车</text>
+<text type="full" x='90w' y='30h' stroke-color='red' fill-color='black' l-bind:content='text'>123自行车</text>
+
+<text type="full" x='90w' y='40h' stroke-color='red' fill-color='black' l-bind:content::demo='text'>123自行车</text>

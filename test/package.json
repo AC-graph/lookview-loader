@@ -13,6 +13,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "lookview": "^2.0.12-beta"
+    "lookview": "^2.0.0"
   }
 }
